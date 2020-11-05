@@ -12,7 +12,7 @@ namespace SpaDay.Controllers
     {
         public bool CheckSkinType(string skinType, string facialType)
         {
-
+            ViewBag.skintype = skinType;
             if (facialType != "Microdermabrasion")
             {
                 if (skinType == "oily" && facialType != "Rejuvenating")
@@ -49,6 +49,7 @@ namespace SpaDay.Controllers
             };
 
             List<string> appropriateFacials = new List<string>();
+            ViewBag.appropriateFacials = appropriateFacials;
             for (int i = 0; i < facials.Count; i++)
             {
                 if (CheckSkinType(skintype, facials[i]))
@@ -56,6 +57,9 @@ namespace SpaDay.Controllers
                     appropriateFacials.Add(facials[i]);
                 }
             }
+
+            ViewBag.manipedi = manipedi.ToLower();
+
             return View();
         }
 
