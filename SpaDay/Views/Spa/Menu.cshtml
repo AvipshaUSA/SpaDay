@@ -1,57 +1,77 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@*<!DOCTYPE HTML>
+<html>
 
-<h1>Fancy Spa</h1>
+<head>
+    <link rel="stylesheet" href="~/css/custom.css" />
+</head>*@
 
-
-<div id="clientProfile">
-
-    <h3>Cliant Prifile</h3>
-    <ol>
+@*<body>*@
    
-          <li> @ViewBag.client</li>
 
-    </ol>
-</div>
+        <h1>Fancy Spa</h1>
 
 
+        <div id="clientProfile">
+
+            <h3>Cliant Profile</h3>
+            <ol>
+
+                <li> @ViewBag.client</li>
+
+            </ol>
+        </div>
 
 
-<div id="servicesMenu">
-
-    <h5>Facial Treatments</h5>
-    <!--<p>Your //TODO: pass the skintype value in here// skin type is best suited to the follow facial types:</p> -->
 
 
-    <p>Your @ViewBag.skinType skin type is best suited to the follow facial types:</p>
+        <div id="servicesMenu">
+
+            <h5>Facial Treatments</h5>
+            <!--<p>Your //TODO: pass the skintype value in here// skin type is best suited to the follow facial types:</p> -->
 
 
-    <!--//TODO: iterate through appropriate facial treatments  -->
-    <ul>
-        @foreach (var appropriate in ViewBag.appropriateFacials)
-        {
+            <p>Your @ViewBag.skinType skin type is best suited to the follow facial types:</p>
+
+
+            <!--//TODO: iterate through appropriate facial treatments  -->
             <ul>
+                @foreach (var appropriate in ViewBag.appropriateFacials)
+                {
+                
 
-                <li>@appropriate</li>
+                        <li>@appropriate</li>
+                   
+                }
+
             </ul>
-        }
 
-    </ul>
+            <h5>Nail Services</h5>
+            <!--  // TODO: display a description for the nail service selected -->
 
-    <h5>Nail Services</h5>
-  <!--  // TODO: display a description for the nail service selected -->
+            @if (ViewBag.manipedi == "MANICURE")
+            {
+                <p>Our @ViewBag.manipedi is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
+            }
+            else if (ViewBag.manipedi == "PEDICURE")
+            {
+                <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
 
-    @if (ViewBag.manipedi == "manicure")
-    {
-        <p>Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
-    }
-    else if (ViewBag.manipedi == "pedicure")
-    {
-        <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+            }
+            else if (ViewBag.manipedi == "BOTH")
+            {
+                <p>You Choose both Manicure & Pedicure</p>
+                <ul>
+                    <li>MANICURE: Our manipedi is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish</li>
+                    <li>PEDICURE: Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season</li>
 
-    }
+                </ul>
+            }
 
-</div>
+            <p> you choose <u>@ViewBag.nailpolish</u> color nailpolish for you nail </p>
+        </div>
+
+    
+@*</body>
+
+    </html>*@
+
