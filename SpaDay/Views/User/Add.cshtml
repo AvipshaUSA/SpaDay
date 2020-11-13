@@ -2,6 +2,10 @@
 
 <h1>**Enter Your Informations**</h1>
 <br>
+@if(ViewBag.error != null)
+{
+<p><h2> @ViewBag.error</h2></p>
+}
 
 <form method="POST" action="/user">
 
@@ -9,25 +13,25 @@
 
     <lebel>
         Email Id:
-        <input type="email" name="email" placeholder="Email.."/>
+        <input type="email" name="email" placeholder="Email.." value="@ViewBag.email"/>
     </lebel>
-<br>
+    <br>
     <lebel>
         UserName:
-        <input type="text" name="userName" placeholder="Username.."/>
+        <input type="text" name="userName" placeholder="Username.."value="@ViewBag.userName"/>
     </lebel>
     <br>
     <lebel>
         PassWord:
-        <input type="password" name="password" placeholder="Password.."/>
+        <input type="password" name="password" placeholder="Password.." />
     </lebel>
     <br>
     <lebel>
-      Re-enter Password:
-        <input type="password" name="varify" placeholder="Re-enter.."/>
+        Re-enter Password:
+        <input type="password" name="varify" placeholder="Re-enter.." />
     </lebel>
-<br>
-    <input type="Submit" value="Submit!"/>
+    <br>
+    <input type="Submit" value="Submit!" />
 
     @*</div>*@
 

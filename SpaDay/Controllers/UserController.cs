@@ -35,7 +35,8 @@ namespace SpaDay.Controllers
             else
             {
                 ViewBag.username = newUser.UserName;
-               
+                ViewBag.email = newUser.Email;
+                ViewBag.error = "PassWord Did not match. Enter Again";
                 return View("Add");
             }
            
