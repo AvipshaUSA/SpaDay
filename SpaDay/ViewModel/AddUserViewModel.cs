@@ -13,13 +13,14 @@ namespace SpaDay.ViewModel
         public string Username { get; set; }
 
 
-        [EmailAddress]
-         public string Email { get; set; } //this field is optional
+        [EmailAddress(ErrorMessage = "Please Enter valid Email address.")]
+        public string Email { get; set; } //this field is optional
 
 
         [Required(ErrorMessage = "Password is required.")]
         [Display(Name = "Password")]
         [StringLength(20, MinimumLength = 6, ErrorMessage = "password must be 6 to 20 charecters.")]
+        [RegularExpression(@"^[a-zA-Z0-9]+$")]
         public string Password { get; set; }
 
 

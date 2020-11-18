@@ -36,30 +36,31 @@ namespace SpaDay.Controllers
 
             if (ModelState.IsValid)
             {
-               
-                if (objectName.Password == objectName.VarifyPassword)
+
+                //if (objectName.Password == objectName.VarifyPassword)
+                //{
+                // ViewBag.user = newUser;
+                User newUser = new User
                 {
-                    // ViewBag.user = newUser;
-                    User newUser = new User
-                    {
-                        Username = objectName.Username,
-                        Password = objectName.Password,
-                        VarifyPassword = objectName.VarifyPassword,
-                        Email = objectName.Email
+                    Username = objectName.Username,
+                    Password = objectName.Password,
+                    VarifyPassword = objectName.VarifyPassword,
+                    Email = objectName.Email
 
 
-                    };
+                };
 
-                    return View("Index", newUser);
-                }
-                else
-                {
-                    ViewBag.error = "Passwords do not match! Try again!";
-                    //ViewBag.userName = newUser.Username;
-                    //ViewBag.eMail = newUser.Email;
-                    return View("Add");
-                }
+                return View("Index", newUser);
             }
+            //    //}
+            //    //else
+            //    //{
+            //        //ViewBag.error = "Passwords do not match! Try again!";
+            //        //ViewBag.userName = newUser.Username;
+            //        //ViewBag.eMail = newUser.Email;
+            //        return View("Add",objectName);
+            ////    }
+           // }
             return View("Add",objectName);
 
         }
